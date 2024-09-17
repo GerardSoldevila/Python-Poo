@@ -31,7 +31,7 @@ class Vaca(Animal):
 un_gos = Gos("Rex")
 un_gos.parla()
 
-un_gat = Gat("Pel")
+un_gat = Gat("Funky")
 un_gat.parla()
 
 un_cabra = Cabra("Xai")
