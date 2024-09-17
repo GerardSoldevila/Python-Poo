@@ -8,13 +8,16 @@ class Alumne:
         self.edat = edat
         self.notas = dict()  #diccionari on guardare les notes d'aquest alumne
        
+    def descripcio(self):
+        print()
+        
         
     def add_nota(self,assignatura,notas):
         if assignatura not in self.a:
             print("Aquesta assignatura no existeix")
                    
         else:
-            if (notas >= 0 and notas <= 10):
+            if (assignatura in Alumne.a and notas >= 0 and notas <= 10):
                 self.notas[assignatura] = notas
             elif (notas == "NP"):
                 self.notas[assignatura] = notas
@@ -29,6 +32,7 @@ class Alumne:
         """
     def average_nota(self):
         
+        notmitjana = -1
         if len(self.notas) == 0:
             return " La mitjana és un 0"
         else:
