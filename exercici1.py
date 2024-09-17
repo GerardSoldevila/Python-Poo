@@ -1,6 +1,7 @@
 from persona import Persona
 
 
+
 def listPeople():
     
     people = list()

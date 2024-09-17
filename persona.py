@@ -23,9 +23,9 @@ class Persona:
         self.malnoms.append(malnom)
         
 
-a1 = Persona("Peter","20","Groc","PereRepera")
-a2 = Persona("Joan","59","Blau","Capcigrany")
-a3 = Persona("Anna","35","Vermell","Petita")
+a1 = Persona("Peter",20,"Groc","PereRepera")
+a2 = Persona("Joan",59,"Blau","Capcigrany")
+a3 = Persona("Anna",35,"Vermell","Petita")
 
 a1.descripcio()
 a2.descripcio()
