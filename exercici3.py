@@ -1,11 +1,17 @@
 class Animal:
 
-    def __init__(self, nom):
+    def __init__(self,nom,color,manso):
         self.nom = nom
+        self.color = color
+        self.manso = manso
 
     def parleu(self):
         print(f"{self.nom} està ")
         
+    def descripcio(self):
+        print(f"El nom de {self.nom} és :")
+        print(f"El color de {self.color} és :")
+        print(f"El caracter {self.manso} és :")
         
         
     def menja(self):
@@ -17,6 +23,7 @@ class Animal:
 class Gos(Animal):
     def parla(self):
         print("guau,guau")
+    
 class Gat(Animal):
     def parla(self):
         print("miau,miau")
@@ -30,6 +37,7 @@ class Vaca(Animal):
   
 un_gos = Gos("Rex")
 un_gos.parla()
+#un_gos.descripcio("rex","negre",True)
 
 un_gat = Gat("Funky")
 un_gat.parla()
