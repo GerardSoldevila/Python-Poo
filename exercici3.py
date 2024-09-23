@@ -1,19 +1,24 @@
-class Animal:
+from abc import ABC,abstractmethod
 
-    def __init__(self,nom,color,manso):
+class Animal(ABC):
+
+    def __init__(self, nom, color, manso):
         self.nom = nom
         self.color = color
         self.manso = manso
 
-    def parleu(self):
-        print(f"{self.nom} està ")
-        
+    @abstractmethod
+    def parla(self):
+        pass
+       
     def descripcio(self):
-        print(f"El nom de {self.nom} és :")
-        print(f"El color de {self.color} és :")
-        print(f"El caracter {self.manso} és :")
-        
-        
+        if self.manso:
+            manso = True
+        else:
+            manso = False
+            
+        return f"Nom: {self.nom}, Color: {self.color}, és manso: {self.manso}"
+                 
     def menja(self):
         print(f"{self.nom} està menjant")
 
@@ -22,28 +27,85 @@ class Animal:
 
 class Gos(Animal):
     def parla(self):
-        print("guau,guau")
+        return"guau,guau"
     
 class Gat(Animal):
     def parla(self):
-        print("miau,miau")
+        return "miau,miau"
 class Cabra(Animal):
     def parla(self):
-        print("beee,beeee")
+        return "beee,beeee"
 class Vaca(Animal):
     def parla(self):
-        print("muuuu,muuu")
+        return "muuuu,muuu"
     
+    
+class Granja:
+
+    def __init__(self, nom):
+        self.nom = nom
+        self.llista = []
   
-un_gos = Gos("Rex")
-un_gos.parla()
-#un_gos.descripcio("rex","negre",True)
+    def afegirAnimal(self, animal):
+        self.llista.append(animal)
+    
+    def queParliTothom(self):
+        print(f"{self.nom}")
+        
+        for animal in self.llista:
+            print(f"{animal.nom} diu {animal.parla()}")
+   
+    def creaFitxer(self):
+        f = open("exercici3_animals.txt","w")
+        for animal in self.llista:
+            f.write(f"{animal.nom},{animal.color},{animal.manso}")
+            
+        f.close()
+    
+    def afegirAnimalsGranja(self):
+    
+        f = open("exercici3_animals.txt","r")
+        for linia in f:
+            # separa la lineaa per comes
+            # miro el primer element i faig un if
+            # if [0] == "gos":
+            pass
+   
+granja = Granja("Granja Vella")
+   
+     
+gos = Gos("Rex", "blau", True)
+gat = Gat("Funky", "negre", False)
+cabra = Cabra("Xai", "groc", True)
+vaca = Vaca("Joe", "gris", False)
 
-un_gat = Gat("Funky")
-un_gat.parla()
 
-un_cabra = Cabra("Xai")
-un_cabra.parla()
+granja.afegirAnimal(gos)
+granja.afegirAnimal(gat)
+granja.afegirAnimal(cabra)
+granja.afegirAnimal(vaca)
 
-un_vaca = Vaca("Joe")
-un_vaca.parla()
+
+granja.queParliTothom()
+print(gos.descripcio())
+granja.creaFitxer()
+
+'''
+print(gos.parla())
+print(gos.descripcio())
+
+print(gat.parla())
+print(gat.descripcio())
+
+print(cabra.parla())
+print(cabra.descripcio())
+
+print(vaca.parla())
+
+'''
+
+
+
+    
+# herència multi nivell: afegir classe EsserViu amb mètode Respira
+# herència múltiple: afegir classe Mascota amb mètode propietari

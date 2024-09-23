@@ -17,7 +17,7 @@ class Alumne:
             print("Aquesta assignatura no existeix")
                    
         else:
-            if (assignatura in Alumne.a and notas >= 0 and notas <= 10):
+            if isinstance(notas, (int, float)) and  notas >= 0 and notas <= 10:
                 self.notas[assignatura] = notas
             elif (notas == "NP"):
                 self.notas[assignatura] = notas
@@ -37,7 +37,9 @@ class Alumne:
             return " La mitjana és un 0"
         else:
             
-            return sum(self.notas.values()) / len(self.notas)
+            return sum(
+                [nota for nota in self.notas.values() if isinstance(nota, (int, float))]
+            ) / len([nota for nota in self.notas.values() if isinstance(nota, (int, float))])
 
             
     def add_nota_np(self,assignatura):
