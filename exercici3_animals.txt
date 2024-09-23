@@ -1,1 +1,4 @@
-Rex,blau,TrueFunky,negre,FalseXai,groc,TrueJoe,gris,False
+gos,Rex,blau,True
+gat,Funky,negre,False
+cabra,Xai,groc,True
+vaca,Joe,gris,False

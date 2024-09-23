@@ -1,4 +1,4 @@
-from persona import Persona
+from exercici1_main import Persona
 
 def main():
     persones = []
@@ -12,53 +12,40 @@ def main():
         age = int(input("Edat: "))
         favoritColor = input("Color preferit: ")
 
-        # Crear persona
+        # Crear la persona
         persona = Persona(name, surname, age, favoritColor)
         persones.append(persona)
 
-        # malnoms_input = input("Introdueix els malnoms separats per comes (deixa-ho buit si no vols afegir-ne cap): ")
-        # if malnoms_input: 
-        #     malnoms = [malnom.strip() for malnom in malnoms_input.split(',')]
-        #     for malnom in malnoms:
-        #         persona.afegir_malnom(malnom)      
+        malnoms_input = input("Introdueix els malnoms separats per comes (deixa-ho buit si no vols afegir-ne cap): ")
+        if malnoms_input:
+            malnoms = [malnom.strip() for malnom in malnoms_input.split(',')]
+            for malnom in malnoms:
+                persona.add_malnom(malnom)
 
-    # Mostrar
+    # Mostrar la informació de les persones
     print("\nLlista de persones:")
     suma_edats = 0
     for persona in persones:
         print(persona.description())
         suma_edats += persona.age
 
-    mitjana_edats = suma_edats / num_persones  
-    print(f"La mitjana de les edats és: {mitjana_edats}")
-
-    # Calcular la mitjana d'edat
-    # suma_edats = sum([persona.edat for persona in persones])
-    # mitjana_edat = suma_edats / len(persones)
-    # print(f"\nMitjana d'edat: {mitjana_edat:.2f}")
+    mitjana_edats = suma_edats / num_persones if num_persones > 0 else 0
+    #2 especifica que es volen mostrar dues xifres decimals.
+    #f indica que és un número en coma flotant (float).      
+    print(f"La mitjana de les edats és: {mitjana_edats:.2f}")
 
 if __name__ == "__main__":
     main()
+
+
 '''
-def listPeople():
-    
-    people = list()
-    num_people = int(input("Quantes persones vols afegir?: "))
-    
-    for i in range(num_people):
-        nom = input("Nom: ")
-        cognom = input("Cognom: ")
-        edat = input ("Edat: ")
-        color_preferit = input ("Color preferit: ")
-        
-        persona = Persona(nom, cognom, edat, color_preferit)
-        people.append(persona)
-        
+p1 = Persona("Alfonso", "da Silva", 49, "verd")
+print(p1.description())
 
+p1.set_favoritColor("groc")
+p1.add_malnom("El màquina")
+p1.add_malnom("El màquina")
+p1.add_malnom("Assamblador")
 
-
-# Nombre d'alumnes com a variable de classe
-# Llista dels noms alumnes com a variable de classe
-# Edat mitjana dels alumnes
-
+print(p1.description())
 '''
