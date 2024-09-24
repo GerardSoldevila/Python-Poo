@@ -1,6 +1,7 @@
 from exercici1_main import Persona
 
 def main():
+    
     persones = []
 
     num_persones = int(input("Quantes persones vols afegir? "))
@@ -29,23 +30,13 @@ def main():
         print(persona.description())
         suma_edats += persona.age
 
-    mitjana_edats = suma_edats / num_persones if num_persones > 0 else 0
+    mitjana_edats = suma_edats / num_persones
+    print(f"La mitjana de les edats és: {mitjana_edats}")
     #2 especifica que es volen mostrar dues xifres decimals.
     #f indica que és un número en coma flotant (float).      
-    print(f"La mitjana de les edats és: {mitjana_edats:.2f}")
+  
 
 if __name__ == "__main__":
     main()
 
 
-'''
-p1 = Persona("Alfonso", "da Silva", 49, "verd")
-print(p1.description())
-
-p1.set_favoritColor("groc")
-p1.add_malnom("El màquina")
-p1.add_malnom("El màquina")
-p1.add_malnom("Assamblador")
-
-print(p1.description())
-'''

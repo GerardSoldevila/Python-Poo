@@ -7,7 +7,7 @@ class Persona:
         self.favoritColor = favoritColor
         self.malnoms = []
 
-    #change the favotite color
+    #change the favorite color
     def set_favoritColor(self, favoritColor):
         self.favoritColor = favoritColor
 
